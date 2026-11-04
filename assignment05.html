@@ -1,0 +1,680 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Leaf & Bean - Business Landing Website</title>
+
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+/* ROOT VARIABLES */
+
+:root {
+    --primary-color: #173f43;
+    --secondary-color: #167579;
+    --background-color: #edf3f6;
+    --hero-color: #285b4b;
+    --text-color: #203f55;
+    --white-color: #ffffff;
+    --border-color: #cbd9e1;
+    --card-color: #f3f8f6;
+    --gold-color: #dfb44e;
+
+    --heading-font: Arial, Helvetica, sans-serif;
+    --body-font: Arial, Helvetica, sans-serif;
+}
+
+
+/* BASIC CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    line-height: 1.6;
+    padding: 30px 40px;
+}
+
+
+/* MAIN CONTAINER */
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+
+    padding: 10px 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2 {
+    font-size: 16px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--gold-color);
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    background-color: var(--hero-color);
+    color: var(--white-color);
+
+    min-height: 195px;
+    padding: 10px 15px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.tagline {
+    color: #e8d4a3;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-family: var(--heading-font);
+    font-size: 29px;
+    line-height: 1.4;
+    margin-bottom: 2px;
+}
+
+.hero p {
+    font-size: 14px;
+}
+
+.btn {
+    display: inline-block;
+
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+
+    padding: 6px 12px;
+    margin-top: 12px;
+
+    border-radius: 5px;
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0d4b4d;
+}
+
+
+/* FAVOURITES SECTION */
+
+.favourites {
+    padding: 15px;
+}
+
+.favourites h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: flex;
+    gap: 12px;
+}
+
+.card {
+    flex: 1;
+
+    min-height: 115px;
+
+    padding: 10px 12px;
+
+    background-color: var(--card-color);
+
+    border-radius: 9px;
+
+    transition: transform 0.3s ease;
+}
+
+.card h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+
+/* THREE DIFFERENT CARD STYLES */
+
+.card-one {
+    border: 1px solid var(--border-color);
+}
+
+.card-two {
+    border: 3px solid var(--gold-color);
+    border-radius: 4px;
+}
+
+.card-three {
+    border: 3px solid #60877e;
+    border-radius: 0;
+}
+
+
+/* CARD HOVER EFFECT */
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* ABOUT / LANDSCAPE */
+
+.about {
+    padding: 0 12px;
+}
+
+.landscape {
+    height: 100px;
+
+    background-color: #dcebe2;
+
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* SUN */
+
+.sun {
+    width: 120px;
+    height: 26px;
+
+    background-color: #fff4ce;
+
+    border-radius: 50%;
+
+    position: absolute;
+    top: 10px;
+    right: 15%;
+}
+
+
+/* MOUNTAINS */
+
+.mountain {
+    position: absolute;
+    bottom: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 230px solid transparent;
+    border-right: 230px solid transparent;
+}
+
+.mountain-one {
+    left: 5%;
+    border-bottom: 68px solid #7da399;
+}
+
+.mountain-two {
+    right: 5%;
+    border-bottom: 53px solid #456d68;
+}
+
+
+/* QUOTE AND ADDRESS */
+
+.quote {
+    margin-top: 14px;
+    font-size: 14px;
+}
+
+.address {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+
+/* CONTACT SECTION */
+
+.contact {
+    padding: 20px;
+}
+
+.contact h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+
+/* FORM GROUP */
+
+.form-group {
+    margin-bottom: 8px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+
+/* INPUT FIELDS */
+
+.form-group input {
+    width: 100%;
+
+    padding: 7px;
+
+    border: 1px solid #9bafbd;
+    border-radius: 3px;
+
+    font-size: 13px;
+    color: var(--text-color);
+
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--secondary-color);
+}
+
+
+/* SUBMIT BUTTON */
+
+.submit-btn {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+
+    padding: 7px 12px;
+
+    border: none;
+    border-radius: 4px;
+
+    font-size: 14px;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-color);
+}
+
+
+/* FOOTER */
+
+.footer {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+
+    padding: 10px 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 190px;
+}
+
+.footer h3 {
+    font-size: 15px;
+}
+
+.footer nav {
+    display: flex;
+    gap: 15px;
+}
+
+.footer a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer a:hover {
+    color: var(--gold-color);
+}
+
+
+/* ASSIGNMENT NOTE */
+
+.assignment-note {
+    max-width: 1200px;
+    margin: 25px auto 0;
+
+    padding: 10px;
+
+    background-color: #deebef;
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* BOTTOM TEXT */
+
+.bottom-text {
+    max-width: 1200px;
+    margin: 10px auto;
+
+    font-size: 12px;
+    color: #60788b;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 60px;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .navbar nav,
+    .footer nav {
+        gap: 9px;
+    }
+
+    .navbar a,
+    .footer a {
+        font-size: 11px;
+    }
+
+    .hero h1 {
+        font-size: 21px;
+    }
+
+    .mountain {
+        border-left-width: 120px;
+        border-right-width: 120px;
+    }
+
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER / NAVBAR -->
+
+        <header class="navbar">
+
+            <h2>LEAF & BEAN</h2>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </header>
+
+
+        <!-- HERO SECTION -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="tagline">
+                    YOUR NEIGHBOURHOOD CAFÉ
+                </p>
+
+                <h1>
+                    Good coffee.<br>
+                    A little room to pause.
+                </h1>
+
+                <p>
+                    Fresh brews and warm bites.
+                </p>
+
+                <a href="#contact" class="btn">
+                    Visit us
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- OUR FAVOURITES -->
+
+        <section class="favourites" id="services">
+
+            <h2>Our favourites</h2>
+
+            <div class="cards">
+
+                <div class="card card-one">
+                    <h3>Fresh brews</h3>
+
+                    <p>
+                        Coffee, made your way.
+                    </p>
+                </div>
+
+
+                <div class="card card-two">
+                    <h3>Warm bites</h3>
+
+                    <p>
+                        Sandwiches and treats.
+                    </p>
+                </div>
+
+
+                <div class="card card-three">
+                    <h3>Study corner</h3>
+
+                    <p>Space for your ideas.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT / IMAGE SECTION -->
+
+        <section class="about" id="about">
+
+            <div class="landscape">
+
+                <div class="sun"></div>
+
+                <div class="mountain mountain-one"></div>
+
+                <div class="mountain mountain-two"></div>
+
+            </div>
+
+            <p class="quote">
+                “A lovely place for a study break.”
+            </p>
+
+            <p class="address">
+                SRMS College Road, Bareilly
+            </p>
+
+        </section>
+
+
+        <!-- CONTACT FORM -->
+
+        <section class="contact" id="contact">
+
+            <h2>Come say hello</h2>
+
+            <form action="#" method="post">
+
+                <div class="form-group">
+
+                    <label for="name">Your name</label>
+
+                    <input
+                        type="text" id="name" name="name" placeholder="Enter Name" required  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">Email</label>
+
+                    <input
+                        type="email id="email" name="email" placeholder="xyz@example.com"required >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">Message</label>
+
+                    <input
+                        type="text"  id="message" name="message" placeholder="Type Message"required >
+
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+                    Send message
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+
+            <h3>© 2026 LEAF & BEAN</h3>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </footer>
+
+    </div>
+
+
+    <!-- ASSIGNMENT NOTE -->
+
+    <div class="assignment-note">
+
+        Use normal flow / inline-block and positioning.
+        Include a positioned hero overlay, 3 card styles,
+        images, contact form and footer.
+        Practise box model, backgrounds, borders and overflow.
+
+    </div>
+
+    <p class="bottom-text">
+        Sample content and design. Follow ASSIGNMENTS.md
+        for code, Git and README requirements.
+    </p>
+
+</body>
+
+</html>

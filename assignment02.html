@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #edf3f6;
+    margin: 0;
+    padding: 20px;
+    color: #263b49;
+}
+
+/* Main Heading */
+h5 {
+    color: #176c6c;
+    margin-bottom: 5px;
+}
+
+h1 {
+    margin-top: 5px;
+    font-size: 30px;
+}
+
+body > p {
+    color: #667985;
+    font-size: 14px;
+}
+
+/* Main Form Container */
+main {
+    background-color: white;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    min-height: 850px;
+}
+
+h2 {
+    margin-top: 0;
+    color: #263b49;
+}
+
+/* Fieldset */
+fieldset {
+    border: none;
+    padding: 10px 0;
+    margin-bottom: 15px;
+}
+
+legend {
+    color: #176c6c;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #bfc8cc;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    font-family: Arial, sans-serif;
+}
+
+/* Focus Effect */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 1px solid #176c6c;
+    border-color: #176c6c;
+}
+
+/* Radio and Checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 4px;
+}
+
+label.inline {
+    display: inline;
+    margin-right: 10px;
+}
+
+/* Range */
+input[type="range"] {
+    width: 100%;
+    accent-color: #176c6c;
+}
+
+/* Color */
+input[type="color"] {
+    display: block;
+    width: 50px;
+    height: 30px;
+    border: none;
+    margin-top: 8px;
+}
+
+/* Textarea */
+textarea {
+    resize: vertical;
+}
+
+/* Buttons */
+button {
+    background-color: #176c6c;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+button:hover {
+    background-color: #105252;
+}
+
+/* Footer */
+footer {
+    max-width: 700px;
+    margin: 15px auto;
+    color: #667985;
+    font-size: 12px;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <h5>BTECH YEAR 1 / HTML & CSS / ASSIGNMENT 03</h5>
+    <h1>The Ultimate Form</h1>
+    <p>Week 4 · Complete single-column form · Illustrative expected output</p>
+
+    <main>
+        <h2>Application Form</h2>
+        <p>Student internship application · Required</p>
+
+        <form>
+
+            <fieldset>
+                <legend>Personal Details</legend>
+
+                <label for="name">Full name *</label>
+                <input type="text" id="name" name="name"
+                       placeholder="Enter Name" required>
+
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email"
+                       placeholder="xyz@example.com" required>
+
+                <label for="password">Password *</label>
+                <input type="password" id="password" name="password"
+                       required>
+
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone"
+                       placeholder="Enter Phone" required>
+
+                <label for="portfolio">Portfolio URL</label>
+                <input type="url" id="portfolio" name="portfolio"
+                       placeholder="https://example.com">
+
+                <label for="age">Age *</label>
+                <input type="number" id="age" name="age"
+                       placeholder="Enter Age" min="18" max="50" required>
+
+                <p>Gender:</p>
+
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male" class="inline">Male</label>
+
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female" class="inline">Female</label>
+
+                <input type="radio" id="other" name="gender"
+                       value="Other" checked>
+                <label for="other" class="inline">Other / prefer not to say</label>
+
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Education</legend>
+
+                <label for="course">Course*</label>
+                <select id="course" name="course" required>
+                    <option >Enter Course</option>
+                    <option value="BTech">BTech — Computer Science</option>
+                    <option value="BCA">BCA</option>
+                    <option value="MCA">MCA</option>
+                    <option value="BBA">BBA</option>
+                </select>
+
+                <label for="city">Preferred city (datalist)</label>
+                <input list="cities" id="city" name="city"
+                       placeholder="Delhi">
+
+                <datalist id="cities">
+                    <option value="Delhi">
+                    <option value="Mumbai">
+                    <option value="Meerut">
+                    <option value="Noida">
+                    <option value="Bangalore">
+                </datalist>
+
+                <p>Skills:</p>
+
+                <input type="checkbox" id="html" name="skills" value="HTML">
+                <label for="html" class="inline">HTML</label>
+
+                <input type="checkbox" id="css" name="skills" value="CSS" checked>
+                <label for="css" class="inline">CSS</label>
+
+                <input type="checkbox" id="js" name="skills" value="JavaScript">
+                <label for="js" class="inline">JavaScript</label>
+
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Upload & Extras</legend>
+
+                <label for="date">Available from</label>
+                <input type="date" id="date" name="date"
+                       value="2026-11-15">
+
+                <label for="time">Interview time</label>
+                <input type="time" id="time" name="time"
+                       value="10:30">
+
+                <label for="resume">Resume *</label>
+                <input type="file" id="resume" name="resume"
+                       accept=".pdf,.doc,.docx" required>
+
+                <label for="stipend">
+                    Expected monthly stipend: ₹10,000
+                </label>
+                <input type="range" id="stipend" name="stipend"
+                       min="5000" max="20000" value="10000">
+
+                <label for="color">Favourite colour</label>
+                <input type="color" id="color" name="color"
+                       value="#176c6c">
+
+                <label for="message">Why would you like to join?</label>
+                <textarea id="message" name="message" rows="4"
+                    placeholder="I want to practise HTML and CSS on real projects."></textarea>
+
+            </fieldset>
+
+            <button type="submit">Submit application</button>
+            <button type="reset">Reset</button>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>Sample content and design. Follow ASSIGNMENTS.md for code, Git and README requirements.</p>
+    </footer>
+
+</body>
+</html>

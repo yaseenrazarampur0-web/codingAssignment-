@@ -1,0 +1,647 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Portfolio</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+/* ROOT DESIGN TOKENS */
+
+:root {
+    --primary-color: #173f43;
+    --secondary-color: #14777a;
+    --background-color: #edf3f6;
+    --hero-color: #dfefe6;
+    --text-color: #203f55;
+    --white-color: #ffffff;
+    --border-color: #cbd9e1;
+    --note-color: #deebef;
+
+    --heading-font: Arial, Helvetica, sans-serif;
+    --body-font: Arial, Helvetica, sans-serif;
+}
+
+
+/* BASIC STYLING */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    line-height: 1.6;
+    padding: 30px 40px;
+}
+
+
+/* MAIN CONTAINER */
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 15px;
+}
+
+.navbar h3 {
+    font-size: 16px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #8ee0d5;
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    background-color: var(--hero-color);
+    border: 1px solid var(--border-color);
+
+    padding: 45px 25px;
+    min-height: 255px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.welcome {
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-family: var(--heading-font);
+    font-size: 34px;
+    line-height: 1.35;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.hero-description {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+
+/* BUTTON */
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+
+    padding: 6px 12px;
+    border-radius: 4px;
+
+    text-decoration: none;
+    font-size: 14px;
+
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+}
+
+
+/* PROFILE IMAGE DESIGN */
+
+.profile-image {
+    width: 130px;
+    height: 150px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+
+    margin-right: 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.head {
+    width: 40px;
+    height: 58px;
+
+    background-color: #92aaa6;
+    border-radius: 50%;
+
+    margin-bottom: -2px;
+}
+
+.body-shape {
+    width: 92px;
+    height: 105px;
+
+    background-color: #71938d;
+    border-radius: 50% 50% 45% 45%;
+}
+
+
+/* GENERAL SECTIONS */
+
+.section {
+    padding: 25px;
+}
+
+.section h2 {
+    font-family: var(--heading-font);
+    font-size: 23px;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.section p {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+
+/* SKILLS */
+
+.skills-list {
+    word-spacing: 2px;
+}
+
+
+/* PROJECTS */
+
+.projects-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.project-card {
+    background-color: var(--white-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+
+    padding: 12px 12px 30px;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+}
+
+.project-card h3 {
+    font-size: 19px;
+    margin: 10px 3px 5px;
+}
+
+.project-card p {
+    font-size: 14px;
+    margin: 0 3px;
+}
+
+
+/* PROJECT IMAGE */
+
+.project-image {
+    height: 100px;
+    width: 100%;
+
+    background-color: #dcebe2;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.sun {
+    position: absolute;
+
+    width: 55px;
+    height: 28px;
+
+    background-color: #fff5cd;
+    border-radius: 50%;
+
+    right: 15%;
+    top: 10px;
+}
+
+.mountain {
+    position: absolute;
+    bottom: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 145px solid transparent;
+    border-right: 145px solid transparent;
+}
+
+.mountain-one {
+    left: -40px;
+    border-bottom: 68px solid #7da399;
+}
+
+.mountain-two {
+    right: -30px;
+    border-bottom: 55px solid #456c68;
+}
+
+
+/* CONTACT */
+
+#contact a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+#contact a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+
+/* FOOTER */
+
+.footer {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 15px;
+    margin-top: 25px;
+}
+
+.footer h4 {
+    font-size: 15px;
+}
+
+.footer nav {
+    display: flex;
+    gap: 15px;
+}
+
+.footer a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer a:hover {
+    color: #8ee0d5;
+}
+
+
+/* NOTE BOX */
+
+.note {
+    background-color: var(--note-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+
+    padding: 12px;
+    margin-top: 45px;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* BOTTOM TEXT */
+
+.bottom-text {
+    color: #60788b;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 25px 15px;
+    }
+
+    .hero h1 {
+        font-size: 25px;
+    }
+
+    .profile-image {
+        margin-right: 0;
+        transform: scale(0.8);
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .section {
+        padding: 20px 10px;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .hero {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .navbar nav,
+    .footer nav {
+        gap: 10px;
+    }
+
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- NAVBAR -->
+
+        <header class="navbar">
+
+            <h3>AARAV / PORTFOLIO</h3>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </header>
+
+
+        <!-- HERO SECTION -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="welcome">HELLO, I'M YASEEN RAZA</p>
+
+                <h1>
+                    Curious mind<br>
+                    Future web developer
+                </h1>
+
+                <p class="hero-description">
+                    First-year BTech student building useful web pages.
+                </p>
+
+                <a href="#projects" class="btn">
+                    View projects
+                </a>
+
+            </div>
+
+            <div class="profile-image">
+                <div class="head"></div>
+                <div class="body-shape"></div>
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT SECTION -->
+
+        <section class="section" id="about">
+
+            <h2>About me</h2>
+
+            <p>
+                I enjoy learning how the web works and building clear,
+                accessible pages.
+            </p>
+
+        </section>
+
+
+        <!-- SKILLS SECTION -->
+
+            <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML fundamentals</li>
+                <li>Git and GitHub</li>
+                <li>Problem solving</li>
+                <li>CSS fundamentals</li>
+                <li>JAVASCRIPT fundamentals</li>
+            </ul>
+        </section>
+        
+        <!-- EDUCATION SECTION -->
+
+        <section class="section">
+
+            <h2>Education & My College / My Course</h2>
+            <section id="skills">
+            <h2>Skills</h2>
+             <h3>BTech, Computer Science · 2026-2030</h3>
+            <ul>
+                <li>Web Development Club</li>
+                <li>Library and Coding Lab</li>
+                <li>Problem solving</li>
+                <li>CSS fundamentals</li>
+            
+            </ul>
+        </section>
+
+            <h3>My learning sequence</h3>
+            <ol>
+                <li>HTML structure</li>
+                <li>CSS styling</li>
+                <li>Responsive layouts</li>
+            </ol>
+
+            <h2>HTML</h2>
+            <ul>
+                <li>Page Structure</li>
+            </ul>
+            <h2>CSS</h2>
+            <ul>
+                <li>Page Presentation</li>
+            </ul>
+
+        </section>
+
+
+        <!-- PROJECTS SECTION -->
+
+        <section class="section" id="projects">
+
+            <h2>Selected projects</h2>
+
+            <div class="projects-container">
+
+                <!-- PROJECT 1 -->
+
+                <div class="project-card">
+
+                    <div class="project-image">
+                        <div class="sun"></div>
+                        <div class="mountain mountain-one"></div>
+                        <div class="mountain mountain-two"></div>
+                    </div>
+
+                    <h3>My First Web Page</h3>
+
+                    <p>
+                        Semantic HTML and internal navigation.
+                    </p>
+
+                </div>
+
+
+                <!-- PROJECT 2 -->
+
+                <div class="project-card">
+
+                    <div class="project-image">
+                        <div class="sun"></div>
+                        <div class="mountain mountain-one"></div>
+                        <div class="mountain mountain-two"></div>
+                    </div>
+
+                    <h3>Student Marks Table</h3>
+
+                    <p>
+                        A readable table with grouped headings.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT SECTION -->
+
+        <section class="section" id="contact">
+
+            <h2>Contact</h2>
+
+            <p>
+                Let's learn and build together.
+                <a href="mailto:yaseenrazarampur0@gmail.com">
+                    yaseenrazarampur0@gmail.com
+                </a>
+            </p>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+
+            <h4>© 2026 YASEEN RAZA</h4>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </footer>
+
+
+        <!-- DESIGN NOTE -->
+
+        <div class="note">
+
+            Add an external stylesheet, 4+ selector types,
+            a heading/body font pairing, :root design tokens,
+            hover effects and a README note explaining your design choices.
+
+        </div>
+
+        <p class="bottom-text">
+            Sample content and design. Follow ASSIGNMENTS.md
+            for code, Git and README requirements.
+        </p>
+
+    </div>
+
+</body>
+</html>

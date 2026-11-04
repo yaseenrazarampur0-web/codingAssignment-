@@ -1,0 +1,937 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Audit - Leaf & Bean</title>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+/* ROOT VARIABLES */
+
+:root {
+    --primary: #173f43;
+    --secondary: #14777a;
+    --background: #edf3f6;
+    --white: #ffffff;
+    --text: #203f55;
+    --hero-bg: #285b4c;
+    --card-bg: #f3f8f6;
+    --border: #cbd9e1;
+    --gold: #e0ad42;
+}
+
+
+/* BASIC RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    padding: 30px 40px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* MAIN HEADING */
+
+.main-heading {
+    margin-bottom: 30px;
+}
+
+.top-label {
+    color: var(--secondary);
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.main-heading h1 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #60788b;
+    font-size: 16px;
+}
+
+
+/* RESPONSIVE EXAMPLE */
+
+.responsive-examples {
+    width: 100%;
+}
+
+.device-title {
+    color: var(--secondary);
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+
+/* CAFE WEBSITE */
+
+.cafe-website {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    background-color: var(--primary);
+    color: var(--white);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 14px 18px;
+}
+
+.navbar h2 {
+    font-size: 17px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 18px;
+}
+
+.navbar a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navbar a:hover {
+    color: var(--gold);
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    background-color: var(--hero-bg);
+    color: var(--white);
+
+    padding: 25px 20px;
+}
+
+.hero-label {
+    color: #f1d59d;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: 30px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.hero p {
+    font-size: 15px;
+}
+
+.visit-btn {
+    display: inline-block;
+
+    background-color: var(--secondary);
+    color: var(--white);
+
+    text-decoration: none;
+
+    padding: 9px 18px;
+    border-radius: 5px;
+
+    margin-top: 14px;
+
+    transition: background-color 0.3s;
+}
+
+.visit-btn:hover {
+    background-color: #0e5559;
+}
+
+
+/* CAFE CONTENT */
+
+.cafe-content {
+    padding: 20px;
+}
+
+.cafe-content > h2 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+
+/* FAVOURITE CARDS */
+
+.favourite-cards {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.favourite-card {
+    flex: 1;
+    min-width: 0;
+
+    background-color: var(--card-bg);
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    padding: 15px;
+    min-height: 110px;
+}
+
+.favourite-card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.favourite-card p {
+    font-size: 14px;
+}
+
+.favourite-card.warm {
+    border: 3px solid var(--gold);
+}
+
+.favourite-card.study {
+    border: 3px solid #5c837c;
+}
+
+
+/* CSS LANDSCAPE */
+
+.cafe-image {
+    height: 145px;
+    width: 100%;
+
+    background-color: #dcebe2;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.sun {
+    position: absolute;
+
+    width: 100px;
+    height: 28px;
+
+    background-color: #fff3c8;
+    border-radius: 50%;
+
+    top: 12px;
+    right: 15%;
+}
+
+.mountain {
+    position: absolute;
+    bottom: 0;
+
+    width: 0;
+    height: 0;
+}
+
+.mountain-one {
+    left: 0;
+
+    border-left: 33vw solid transparent;
+    border-right: 33vw solid transparent;
+    border-bottom: 80px solid #7da399;
+}
+
+.mountain-two {
+    right: 0;
+
+    border-left: 30vw solid transparent;
+    border-right: 30vw solid transparent;
+    border-bottom: 60px solid #456d68;
+}
+
+
+/* QUOTE AND ADDRESS */
+
+.quote {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.address {
+    margin-top: 22px;
+    font-size: 14px;
+}
+
+
+/* FOOTER */
+
+.footer {
+    background-color: var(--primary);
+    color: var(--white);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 14px 18px;
+}
+
+.footer h2 {
+    font-size: 16px;
+}
+
+.footer nav {
+    display: flex;
+    gap: 18px;
+}
+
+.footer a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer a:hover {
+    color: var(--gold);
+}
+
+
+/* BEFORE AND AFTER SECTION */
+
+.audit-section {
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.audit-heading {
+    color: var(--secondary);
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+
+
+/* COMPARISON */
+
+.comparison {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.comparison-box h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+
+/* BEFORE MENU */
+
+.before-menu {
+    display: flex;
+    gap: 18px;
+
+    background-color: #f8e3e1;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    padding: 12px;
+
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.before-menu a {
+    color: #b33c30;
+    text-decoration: none;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+
+/* AFTER MENU */
+
+.after-menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    background-color: #e1eee5;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    padding: 12px;
+    min-height: 50px;
+}
+
+.after-menu a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.after-menu a:hover {
+    color: var(--secondary);
+}
+
+
+/* AUDIT REPORT */
+
+.audit-report {
+    margin-top: 25px;
+}
+
+.audit-report h3 {
+    color: var(--secondary);
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.audit-report p {
+    font-size: 15px;
+    margin-bottom: 13px;
+}
+
+
+/* ASSIGNMENT NOTE */
+
+.assignment-note {
+    background-color: #deebef;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    padding: 15px;
+    margin-top: 65px;
+
+    font-size: 14px;
+}
+
+.bottom-text {
+    color: #60788b;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+
+/* TABLET RESPONSIVE - 768px */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .navbar {
+        padding: 12px;
+    }
+
+    .navbar h2 {
+        font-size: 15px;
+    }
+
+    .navbar nav {
+        gap: 10px;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 20px 15px;
+    }
+
+    .hero h1 {
+        font-size: 25px;
+    }
+
+    .favourite-cards {
+        gap: 10px;
+    }
+
+    .favourite-card {
+        padding: 10px;
+    }
+
+    .favourite-card h3 {
+        font-size: 14px;
+    }
+
+    .favourite-card p {
+        font-size: 12px;
+    }
+
+    .cafe-image {
+        height: 110px;
+    }
+
+    .mountain-one {
+        border-left-width: 30vw;
+        border-right-width: 30vw;
+    }
+
+    .mountain-two {
+        border-left-width: 28vw;
+        border-right-width: 28vw;
+    }
+
+    .audit-section {
+        margin-top: 60px;
+    }
+
+}
+
+
+/* MOBILE RESPONSIVE - 480px */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .main-heading h1 {
+        font-size: 25px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    /* MOBILE NAVBAR */
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+
+        padding: 14px;
+    }
+
+    .navbar nav {
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .navbar a {
+        font-size: 13px;
+    }
+
+
+    /* MOBILE HERO */
+
+    .hero {
+        padding: 18px 14px;
+    }
+
+    .hero h1 {
+        font-size: 23px;
+    }
+
+    .hero-label {
+        font-size: 11px;
+    }
+
+
+    /* MOBILE CARDS */
+
+    .favourite-cards {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .favourite-card {
+        width: 100%;
+        min-height: 85px;
+    }
+
+    .favourite-card h3 {
+        font-size: 16px;
+    }
+
+    .favourite-card p {
+        font-size: 13px;
+    }
+
+
+    /* MOBILE IMAGE */
+
+    .cafe-image {
+        height: auto;
+        aspect-ratio: 2 / 1;
+    }
+
+    .mountain-one {
+        border-left-width: 38vw;
+        border-right-width: 38vw;
+        border-bottom-width: 65px;
+    }
+
+    .mountain-two {
+        border-left-width: 34vw;
+        border-right-width: 34vw;
+        border-bottom-width: 48px;
+    }
+
+    .sun {
+        width: 40px;
+        height: 25px;
+    }
+
+
+    /* MOBILE FOOTER */
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+
+        padding: 15px;
+    }
+
+    .footer nav {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+
+    /* MOBILE AUDIT */
+
+    .audit-section {
+        margin-top: 45px;
+        padding: 14px;
+    }
+
+    .comparison {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .comparison-box h2 {
+        font-size: 16px;
+    }
+
+    .before-menu {
+        gap: 12px;
+        padding: 10px;
+        overflow-x: auto;
+    }
+
+    .after-menu {
+        gap: 7px;
+    }
+
+    .after-menu a {
+        font-size: 13px;
+    }
+
+    .audit-report p {
+        font-size: 13px;
+    }
+
+    .assignment-note {
+        margin-top: 35px;
+    }
+
+}
+
+
+/* PREVENT HORIZONTAL OVERFLOW */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    overflow-wrap: anywhere;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- MAIN HEADING -->
+
+        <div class="main-heading">
+            <p class="top-label">
+                BTECH YEAR 1 / HTML & CSS / ASSIGNMENT 09
+            </p>
+
+            <h1>Responsive Audit</h1>
+
+            <p class="subtitle">
+                Weeks 7-9 · Same café project across screen sizes ·
+                Illustrative expected output
+            </p>
+        </div>
+
+
+        <!-- RESPONSIVE WEBSITE -->
+
+        <section class="responsive-examples">
+
+            <h3 class="device-title">Desktop · 1200px</h3>
+
+            <div class="cafe-website">
+
+                <!-- NAVBAR -->
+
+                <header class="navbar">
+
+                    <h2>LEAF & BEAN</h2>
+
+                    <nav>
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#services">Services</a>
+                        <a href="#contact">Contact</a>
+                    </nav>
+
+                </header>
+
+
+                <!-- HERO SECTION -->
+
+                <section class="hero" id="home">
+
+                    <p class="hero-label">
+                        YOUR NEIGHBOURHOOD CAFÉ
+                    </p>
+
+                    <h1>
+                        Good coffee.<br>
+                        A little room to pause.
+                    </h1>
+
+                    <p>Fresh brews and warm bites.</p>
+
+                    <a href="#contact" class="visit-btn">
+                        Visit us
+                    </a>
+
+                </section>
+
+
+                <!-- FAVOURITES -->
+
+                <main class="cafe-content" id="about">
+
+                    <h2>Our favourites</h2>
+
+                    <div class="favourite-cards">
+
+                        <div class="favourite-card">
+                            <h3>Fresh brews</h3>
+                            <p>Coffee, made your way.</p>
+                        </div>
+
+                        <div class="favourite-card warm">
+                            <h3>Warm bites</h3>
+                            <p>Sandwiches and treats.</p>
+                        </div>
+
+                        <div class="favourite-card study">
+                            <h3>Study corner</h3>
+                            <p>Space for your ideas.</p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- LANDSCAPE IMAGE USING CSS -->
+
+                    <div class="cafe-image">
+
+                        <div class="sun"></div>
+
+                        <div class="mountain mountain-one"></div>
+
+                        <div class="mountain mountain-two"></div>
+
+                    </div>
+
+
+                    <p class="quote">
+                        “A lovely place for a study break.”
+                    </p>
+
+                    <p class="address">
+                        SRMS College Road, Bareilly
+                    </p>
+
+                </main>
+
+
+                <!-- FOOTER -->
+
+                <footer class="footer" id="contact">
+
+                    <h2>LEAF & BEAN</h2>
+
+                    <nav>
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#services">Services</a>
+                        <a href="#contact">Contact</a>
+                    </nav>
+
+                </footer>
+
+            </div>
+
+        </section>
+
+
+        <!-- BEFORE AND AFTER SECTION -->
+
+        <section class="audit-section">
+
+            <h3 class="audit-heading">
+                Before → After · Mobile navigation example
+            </h3>
+
+            <div class="comparison">
+
+                <!-- BEFORE -->
+
+                <div class="comparison-box">
+
+                    <h2>Before: links run off the screen</h2>
+
+                    <div class="before-menu">
+
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Contact →</a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AFTER -->
+
+                <div class="comparison-box">
+
+                    <h2>After: links stay within the viewport</h2>
+
+                    <div class="after-menu">
+
+                        <a href="#">Home</a>
+                        <span>/</span>
+                        <a href="#">About</a>
+                        <span>/</span>
+                        <a href="#">Services</a>
+                        <span>/</span>
+                        <a href="#">Contact</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- AUDIT REPORT -->
+
+            <div class="audit-report">
+
+                <h3>audit.md · Sample report</h3>
+
+                <p>
+                    Image overflowed | 375px |
+                    max-width: 100%; height: auto
+                </p>
+
+                <p>
+                    Menu overflowed | 375px |
+                    Stack links using a media query
+                </p>
+
+                <p>
+                    Cards too narrow | 768px |
+                    Reflow cards at tablet breakpoint
+                </p>
+
+                <p>
+                    Buttons too close | 375px |
+                    Increase spacing and padding
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ASSIGNMENT NOTE -->
+
+        <section class="assignment-note">
+
+            <p>
+                Panels are scaled illustrations. Use at least 2 breakpoints;
+                test 3 actual viewport sizes in DevTools. Submit your own
+                before/after screenshots and audit.md with no horizontal scrolling.
+            </p>
+
+        </section>
+
+
+        <!-- BOTTOM TEXT -->
+
+        <p class="bottom-text">
+            Sample content and design. Follow ASSIGNMENTS.md for code,
+            Git and README requirements.
+        </p>
+
+    </div>
+
+</body>
+
+</html>
