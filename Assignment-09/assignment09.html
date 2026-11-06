@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Collective</title>
+    <link rel="stylesheet" href="style.css">
+  <style>
+    
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #203b4a;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #153f42;
+    color: white;
+    padding: 18px 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #dceee5;
+    padding: 25px;
+    border-bottom: 1px solid #cbd8d2;
+}
+
+.tagline {
+    color: #23676a;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: 32px;
+    line-height: 1.3;
+    margin-bottom: 5px;
+}
+
+.hero p {
+    font-size: 14px;
+}
+
+button {
+    background-color: #176c70;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 18px;
+    cursor: pointer;
+}
+
+/* Main Section */
+main {
+    padding: 24px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+/* Feature Cards - CSS Grid */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.card {
+    background-color: #f3f7f5;
+    border: 1px solid #d5dfdc;
+    border-radius: 9px;
+    padding: 18px;
+    min-height: 110px;
+}
+
+.card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Gallery */
+.gallery-section {
+    margin-top: 35px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.mountain {
+    height: 140px;
+    border-radius: 5px;
+
+    background-color: #dceee5;
+
+    background-image:
+        radial-gradient(
+            circle at 80% 20%,
+            #fff2c5 0 7%,
+            transparent 8%
+        ),
+        linear-gradient(
+            145deg,
+            transparent 50%,
+            #7ca79b 50% 75%,
+            transparent 75%
+        ),
+        linear-gradient(
+            35deg,
+            transparent 48%,
+            #386e65 49% 75%,
+            transparent 76%
+        );
+}
+
+/* Call To Action */
+.cta {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.cta h3 {
+    font-size: 18px;
+}
+
+/* Footer */
+.footer {
+    background-color: #153f42;
+    color: white;
+    padding: 18px 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer h4 {
+    font-size: 14px;
+}
+
+/* Tablet Responsive */
+@media (max-width: 768px) {
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        padding: 22px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        min-height: 150px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .mountain {
+        height: 160px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer nav {
+        flex-wrap: wrap;
+    }
+
+}
+
+  </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">CAMPUS COLLECTIVE</div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <p class="tagline">LEARN · BUILD · BELONG</p>
+
+        <h1>Your next big idea<br>
+        starts on campus.</h1>
+
+        <p>A community for curious students.</p>
+
+        <button>Join us</button>
+    </section>
+
+    <!-- Features Section -->
+    <main>
+
+        <section class="features">
+            <h2>Learn. Build. Belong.</h2>
+
+            <div class="feature-grid">
+
+                <div class="card">
+                    <h3>Learn together</h3>
+                    <p>Join peer study groups.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Build projects</h3>
+                    <p>Practise your new skills.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Find mentors</h3>
+                    <p>Meet experienced students.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Share ideas</h3>
+                    <p>Turn ideas into team efforts.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Join events</h3>
+                    <p>Meet your community.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Grow your skills</h3>
+                    <p>Make progress every week.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+
+            <h2>Life in the community</h2>
+
+            <div class="gallery">
+
+                <div class="mountain"></div>
+                <div class="mountain"></div>
+                <div class="mountain"></div>
+
+            </div>
+
+        </section>
+
+        <!-- Call To Action -->
+        <section class="cta">
+            <h3>Ready to build something?</h3>
+            <button>Get involved</button>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <h4>© 2026 CAMPUS COLLECTIVE</h4>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+
+    </footer>
+
+</body>
+  </html>
+  
