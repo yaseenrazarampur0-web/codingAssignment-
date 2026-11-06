@@ -1,698 +1,372 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Menu</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        
-/* ROOT VARIABLES */
-
-:root {
-    --primary-color: #173f43;
-    --secondary-color: #176f73;
-    --background-color: #edf3f6;
-    --white-color: #ffffff;
-    --text-color: #203f55;
-    --hero-color: #dfebe5;
-    --border-color: #cbd9e1;
-    --card-color: #f3f8f6;
-    --mountain-one: #7da399;
-    --mountain-two: #456d68;
-}
-
-
-/* BASIC CSS */
-
-* {
+        * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 30px 40px;
-    line-height: 1.5;
+    font-family: Arial, sans-serif;
+    background: #f5f3ff;
+    color: #252044;
 }
 
-.page-container {
-    max-width: 1200px;
-    margin: auto;
+/* Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #251c46;
+    color: white;
 }
 
+.navbar h2 {
+    font-size: 25px;
+}
 
-/* PAGE HEADING */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
 
-.page-title {
-    font-size: 28px;
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #c4b5fd;
+}
+
+/* Hero */
+
+.hero {
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #4c1d95, #2563eb);
+    color: white;
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
     margin-bottom: 15px;
 }
 
-.assignment-label {
-    color: var(--secondary-color);
-    font-size: 14px;
-    margin: 25px 0 12px;
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
 }
-
-.description {
-    color: #60788b;
-    margin: 12px;
-}
-
-
-/* 01 - MENU NAVBAR */
-
-.menu-navbar {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-
-    padding: 12px 15px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.menu-navbar h2 {
-    font-size: 16px;
-}
-
-.menu-navbar nav {
-    display: flex;
-    gap: 15px;
-}
-
-.menu-navbar a {
-    color: var(--white-color);
-    text-decoration: none;
-    font-size: 13px;
-
-    transition: color 0.3s;
-}
-
-.menu-navbar a:hover {
-    color: #e5c879;
-}
-
-
-/* 02 - LOGIN SECTION */
-
-.login-section {
-    background-color: var(--hero-color);
-    border: 1px solid var(--border-color);
-    border-radius: 9px;
-
-    min-height: 340px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 30px;
-}
-
-
-/* LOGIN CARD */
-
-.login-card {
-    background-color: var(--white-color);
-
-    width: 280px;
-    min-height: 270px;
-
-    padding: 20px;
-
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-}
-
-.login-card h2 {
-    font-size: 21px;
-    margin-bottom: 14px;
-}
-
-
-/* LOGIN FORM */
-
-.form-group {
-    margin-bottom: 10px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 4px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 7px;
-
-    border: 1px solid #9bafbd;
-    border-radius: 3px;
-
-    font-size: 13px;
-    outline: none;
-}
-
-.form-group input:focus {
-    border-color: var(--secondary-color);
-}
-
-
-/* LOGIN BUTTON */
-
-.login-card button {
-    width: 100%;
-
-    padding: 7px;
-
-    background-color: var(--secondary-color);
-    color: var(--white-color);
-
-    border: none;
-    border-radius: 4px;
-
-    cursor: pointer;
-    font-size: 14px;
-
-    margin-top: 7px;
-
-    transition: background-color 0.3s;
-}
-
-.login-card button:hover {
-    background-color: var(--primary-color);
-}
-
-
-/* 03 - PRODUCTS SECTION */
-
-.products-container {
-    display: flex;
-
-    flex-wrap: wrap;
-    gap: 12px;
-
-    justify-content: space-between;
-    align-items: stretch;
-}
-
-
-/* PRODUCT CARD */
-
-.product-card {
-    background-color: var(--white-color);
-
-    flex-grow: 1;
-    flex-basis: 190px;
-
-    padding: 8px;
-
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-card:hover {
-    transform: translateY(-4px);
-
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
-}
-
-.product-card h3 {
-    font-size: 16px;
-    margin: 5px 3px;
-}
-
-.product-card p {
-    font-size: 14px;
-    margin: 3px;
-}
-
-
-/* PRODUCT IMAGE */
-
-.product-image {
-    height: 65px;
-    width: 100%;
-
-    background-color: #dcebe2;
-
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-
-    position: relative;
-    overflow: hidden;
-}
-
-
-/* PRODUCT SUN */
-
-.product-sun {
-    position: absolute;
-
-    width: 28px;
-    height: 17px;
-
-    background-color: #fff3c8;
-    border-radius: 50%;
-
-    top: 6px;
-    right: 15%;
-}
-
-
-/* PRODUCT MOUNTAINS */
-
-.product-mountain {
-    position: absolute;
-    bottom: 0;
-
-    width: 0;
-    height: 0;
-
-    border-left: 75px solid transparent;
-    border-right: 75px solid transparent;
-}
-
-.product-mountain.one {
-    left: 0;
-    border-bottom: 43px solid var(--mountain-one);
-}
-
-.product-mountain.two {
-    right: 0;
-    border-bottom: 33px solid var(--mountain-two);
-}
-
-
-/* 04 - STORE NAVBAR */
-
-.store-navbar {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-
-    padding: 12px 15px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.store-navbar h2 {
-    font-size: 16px;
-}
-
-.store-navbar nav {
-    display: flex;
-    gap: 15px;
-}
-
-.store-navbar a {
-    color: var(--white-color);
-    text-decoration: none;
-    font-size: 13px;
-
-    transition: color 0.3s;
-}
-
-.store-navbar a:hover {
-    color: #e5c879;
-}
-
-
-/* STORE HERO SECTION */
-
-.store-hero {
-    background-color: var(--hero-color);
-
-    border: 1px solid var(--border-color);
-    border-radius: 0 0 9px 9px;
-
-    min-height: 210px;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 15px;
-
-    text-align: center;
-    padding: 30px;
-}
-
-.store-hero h1 {
-    font-size: 25px;
-    color: var(--text-color);
-}
-
-.store-hero p {
-    font-size: 16px;
-}
-
-
-/* EXPLORE BUTTON */
 
 .explore-btn {
     display: inline-block;
-
-    background-color: var(--secondary-color);
-    color: var(--white-color);
-
+    background: white;
+    color: #4c1d95;
+    padding: 12px 25px;
+    border-radius: 25px;
     text-decoration: none;
-
-    padding: 7px 12px;
-    width: 155px;
-
-    border-radius: 4px;
-
-    transition: background-color 0.3s;
+    font-weight: bold;
 }
 
-.explore-btn:hover {
-    background-color: var(--primary-color);
+/* Products */
+
+.products-container {
+    padding: 60px 8%;
+    text-align: center;
 }
 
+.products-container > h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
 
-/* RESPONSIVE DESIGN */
+.subtitle {
+    color: #777;
+    margin-bottom: 35px;
+}
 
-@media (max-width: 768px) {
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
 
-    body {
-        padding: 15px;
-    }
+/* Product Card */
 
-    .menu-navbar,
-    .store-navbar {
+.product-card {
+    width: 250px;
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(76, 29, 149, 0.18);
+}
+
+/* Product Images */
+
+.product-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.product-card:hover img {
+    transform: scale(1.03);
+}
+
+.product-card h3 {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.product-card p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.product-card h4 {
+    color: #6d28d9;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.product-card button {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 8px;
+    background: #5b21b6;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    background: #2563eb;
+}
+
+/* Login Section */
+
+.login-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    background: #ede9fe;
+}
+
+.login-card {
+    width: 350px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-card h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-card input {
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+.login-card input:focus {
+    border-color: #6d28d9;
+}
+
+.login-card button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #5b21b6;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Footer */
+
+footer {
+    background: #251c46;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    .navbar {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
     }
 
-    .products-container {
-        justify-content: center;
+    .nav-links {
+        gap: 18px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .products {
+        gap: 20px;
     }
 
     .product-card {
-        flex-basis: 220px;
-    }
-
-    .store-hero h1 {
-        font-size: 21px;
-    }
-
-}
-
-@media (max-width: 450px) {
-
-    .menu-navbar nav,
-    .store-navbar nav {
-        gap: 9px;
-    }
-
-    .menu-navbar a,
-    .store-navbar a {
-        font-size: 11px;
-    }
-
-    .login-card {
         width: 100%;
-        max-width: 280px;
+        max-width: 320px;
     }
-
-    .product-card {
-        flex-basis: 100%;
-    }
-
 }
-
     </style>
 </head>
-
 <body>
 
-    <div class="page-container">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h2>Campus Menu</h2>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#products">Menu</a>
+            <a href="#login">Login</a>
+        </div>
+    </nav>
 
-        <h1 class="page-title">Flexbox Practice Pack</h1>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div>
+            <h1>Welcome to Campus Menu</h1>
+            <p>Delicious food, affordable prices.</p>
+            <a href="#products" class="explore-btn">Explore Menu</a>
+        </div>
+    </section>
 
-        <h3 class="assignment-label">01 / menu.html</h3>
+    <!-- Products Section -->
+    <section class="products-container" id="products">
+        <h1>Our Popular Menu</h1>
+        <p class="subtitle">Choose your favourite food</p>
 
-        <header class="menu-navbar">
-
-            <h2>CAMPUS MENU</h2>
-
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-        </header>
-
-        <p class="description">
-            Horizontal links with consistent spacing.
-        </p>
-
-    </div>
-  
-    <div class="page-container">
-
-        <h3 class="assignment-label">02 / login.html</h3>
-
-        <section class="login-section">
-
-            <div class="login-card">
-
-                <h2>Welcome back</h2>
-
-                <form>
-
-                    <div class="form-group">
-
-                        <label for="email">Email</label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            placeholder="you@example.com"
-                            required
-                        >
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label for="password">Password</label>
-
-                        <input
-                            type="password"
-                            id="password"
-                            placeholder="••••••••"
-                            required
-                        >
-
-                    </div>
-
-                    <button type="submit">
-                        Log in
-                    </button>
-
-                </form>
-
-            </div>
-
-        </section>
-
-    </div>
-
-    <div class="page-container">
-
-        <h3 class="assignment-label">
-            03 / products.html · At least 8 wrapping items
-        </h3>
-
-        <section class="products-container">
-
-            <!-- PRODUCT 1 -->
+        <div class="products">
 
             <div class="product-card">
-
-                <div class="product-image">
-                    <div class="product-sun"></div>
-                    <div class="product-mountain one"></div>
-                    <div class="product-mountain two"></div>
-                </div>
-
-                <h3>Product 01</h3>
-                <p>₹199</p>
-
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600" alt="Burger">
+                <h3>Classic Burger</h3>
+                <p>Fresh and delicious burger.</p>
+                <h4>₹99</h4>
+                <button>Order Now</button>
             </div>
-
-
-            <!-- PRODUCT 2 -->
 
             <div class="product-card">
-
-                <div class="product-image">
-                    <div class="product-sun"></div>
-                    <div class="product-mountain one"></div>
-                    <div class="product-mountain two"></div>
-                </div>
-
-                <h3>Product 02</h3>
-                <p>₹249</p>
-
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" alt="Pizza">
+                <h3>Cheese Pizza</h3>
+                <p>Loaded with cheese and toppings.</p>
+                <h4>₹149</h4>
+                <button>Order Now</button>
             </div>
-
-
-            <!-- PRODUCT 3 -->
 
             <div class="product-card">
-
-                <div class="product-image">
-                    <div class="product-sun"></div>
-                    <div class="product-mountain one"></div>
-                    <div class="product-mountain two"></div>
-                </div>
-
-                <h3>Product 03</h3>
-                <p>₹299</p>
-
+                <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=600" alt="Pasta">
+                <h3>White Sauce Pasta</h3>
+                <p>Creamy and tasty pasta.</p>
+                <h4>₹119</h4>
+                <button>Order Now</button>
             </div>
-
-
-            <!-- PRODUCT 4 -->
 
             <div class="product-card">
-
-                <div class="product-image">
-                    <div class="product-sun"></div>
-                    <div class="product-mountain one"></div>
-                    <div class="product-mountain two"></div>
-                </div>
-
-                <h3>Product 04</h3>
-                <p>₹349</p>
-
+                <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600" alt="French Fries">
+                <h3>French Fries</h3>
+                <p>Crispy golden french fries.</p>
+                <h4>₹69</h4>
+                <button>Order Now</button>
             </div>
-
-
-            <!-- PRODUCT 5 -->
 
             <div class="product-card">
-
-                <div class="product-image">
-                    <div class="product-sun"></div>
-                    <div class="product-mountain one"></div>
-                    <div class="product-mountain two"></div>
-                </div>
-
-                <h3>Product 05</h3>
-                <p>₹399</p>
-
+                <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600" alt="Cold Drink">
+                <h3>Cold Drink</h3>
+                <p>Refreshing chilled drink.</p>
+                <h4>₹40</h4>
+                <button>Order Now</button>
             </div>
-
-
-            <!-- PRODUCT 6 -->
 
             <div class="product-card">
-
-                <div class="product-image">
-                    <div class="product-sun"></div>
-                    <div class="product-mountain one"></div>
-                    <div class="product-mountain two"></div>
-                </div>
-
-                <h3>Product 06</h3>
-                <p>₹449</p>
-
+                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600" alt="Donut">
+                <h3>Chocolate Donut</h3>
+                <p>Sweet chocolate glazed donut.</p>
+                <h4>₹59</h4>
+                <button>Order Now</button>
             </div>
-
-
-            <!-- PRODUCT 7 -->
 
             <div class="product-card">
-
-                <div class="product-image">
-                    <div class="product-sun"></div>
-                    <div class="product-mountain one"></div>
-                    <div class="product-mountain two"></div>
-                </div>
-
-                <h3>Product 07</h3>
-                <p>₹499</p>
-
+                <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600" alt="Ice Cream">
+                <h3>Ice Cream</h3>
+                <p>Delicious creamy ice cream.</p>
+                <h4>₹49</h4>
+                <button>Order Now</button>
             </div>
-
-
-            <!-- PRODUCT 8 -->
 
             <div class="product-card">
-
-                <div class="product-image">
-                    <div class="product-sun"></div>
-                    <div class="product-mountain one"></div>
-                    <div class="product-mountain two"></div>
-                </div>
-
-                <h3>Product 08</h3>
-                <p>₹549</p>
-
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600" alt="Sandwich">
+                <h3>Fresh Sandwich</h3>
+                <p>Fresh and healthy sandwich.</p>
+                <h4>₹79</h4>
+                <button>Order Now</button>
             </div>
 
-        </section>
+        </div>
+    </section>
 
-    </div>
+    <!-- Login Section -->
+    <section class="login-section" id="login">
+        <div class="login-card">
+            <h2>Student Login</h2>
 
+            <input type="text" placeholder="Enter Username">
+            <input type="password" placeholder="Enter Password">
 
-    <div class="page-container">
+            <button>Login</button>
+        </div>
+    </section>
 
-        <h3 class="assignment-label">04 / navbar-hero.html</h3>
-
-        <!-- NAVBAR -->
-
-        <header class="store-navbar">
-
-            <h2>CAMPUS STORE</h2>
-
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-        </header>
-
-
-        <!-- HERO SECTION -->
-
-        <section class="store-hero" id="home">
-
-            <h1>Small essentials. Big campus energy.</h1>
-
-            <p>
-                Everything you need for a productive semester.
-            </p>
-
-            <a href="#products" class="explore-btn">
-                Explore
-            </a>
-
-        </section>
-
-    </div>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Campus Menu | All Rights Reserved</p>
+    </footer>
 
 </body>
-
 </html>
