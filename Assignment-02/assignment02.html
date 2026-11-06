@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,66 +7,89 @@
     <link rel="stylesheet" href="style.css">
     <style>
         
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Body Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #edf3f6;
-    margin: 0;
-    padding: 20px;
-    color: #263b49;
+    background: #eef2f7;
+    color: #263445;
+    padding: 30px 20px;
 }
 
 /* Main Heading */
 h5 {
-    color: #176c6c;
-    margin-bottom: 5px;
+    color: #0f766e;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
 }
 
 h1 {
-    margin-top: 5px;
-    font-size: 30px;
+    font-size: 36px;
+    color: #172554;
+    margin-bottom: 8px;
 }
 
-body > p {
-    color: #667985;
+.subtitle {
+    color: #64748b;
     font-size: 14px;
+    margin-bottom: 25px;
 }
 
-/* Main Form Container */
+/* Main Container */
 main {
-    background-color: white;
-    max-width: 700px;
-    margin: 20px auto;
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    min-height: 850px;
+    background: white;
+    max-width: 750px;
+    margin: auto;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
+/* Form Heading */
 h2 {
-    margin-top: 0;
-    color: #263b49;
+    color: #172554;
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+main > p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
 /* Fieldset */
 fieldset {
-    border: none;
-    padding: 10px 0;
-    margin-bottom: 15px;
+    border: 1px solid #dce5ec;
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 25px;
+    background: #fbfdff;
 }
 
+/* Legend */
 legend {
-    color: #176c6c;
+    color: #0f766e;
+    font-size: 17px;
     font-weight: bold;
-    padding: 10px 0;
+    padding: 0 10px;
 }
 
 /* Labels */
 label {
     display: block;
-    margin-top: 12px;
-    margin-bottom: 5px;
     font-size: 14px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    color: #334155;
 }
 
 /* Input Fields */
@@ -83,73 +105,125 @@ input[type="file"],
 select,
 textarea {
     width: 100%;
-    padding: 9px;
-    border: 1px solid #bfc8cc;
-    box-sizing: border-box;
-    margin-bottom: 5px;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: white;
+    font-size: 14px;
     font-family: Arial, sans-serif;
+    margin-bottom: 8px;
+    transition: 0.3s;
 }
 
-/* Focus Effect */
+/* Input Focus */
 input:focus,
 select:focus,
 textarea:focus {
-    outline: 1px solid #176c6c;
-    border-color: #176c6c;
+    outline: none;
+    border-color: #0f766e;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
 }
 
 /* Radio and Checkbox */
 input[type="radio"],
 input[type="checkbox"] {
-    margin-right: 4px;
+    accent-color: #0f766e;
+    margin-right: 5px;
 }
 
 label.inline {
-    display: inline;
-    margin-right: 10px;
+    display: inline-block;
+    font-weight: normal;
+    margin: 8px 12px 8px 0;
 }
 
 /* Range */
 input[type="range"] {
     width: 100%;
-    accent-color: #176c6c;
+    accent-color: #0f766e;
+    margin: 12px 0;
 }
 
-/* Color */
+/* Color Picker */
 input[type="color"] {
     display: block;
-    width: 50px;
-    height: 30px;
+    width: 65px;
+    height: 40px;
     border: none;
+    background: transparent;
+    cursor: pointer;
     margin-top: 8px;
 }
 
 /* Textarea */
 textarea {
     resize: vertical;
+    min-height: 100px;
 }
 
 /* Buttons */
 button {
-    background-color: #176c6c;
-    color: white;
+    padding: 13px 22px;
     border: none;
-    padding: 10px 18px;
-    border-radius: 4px;
+    border-radius: 7px;
+    background: #0f766e;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
-    margin-right: 8px;
+    margin-right: 10px;
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #105252;
+    background: #115e59;
+    transform: translateY(-2px);
+}
+
+/* Reset Button */
+button[type="reset"] {
+    background: #64748b;
+}
+
+button[type="reset"]:hover {
+    background: #475569;
 }
 
 /* Footer */
 footer {
-    max-width: 700px;
-    margin: 15px auto;
-    color: #667985;
+    max-width: 750px;
+    margin: 20px auto;
+    text-align: center;
+    color: #64748b;
     font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    main {
+        padding: 20px 15px;
+    }
+
+    fieldset {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    button {
+        margin-bottom: 10px;
+    }
 }
 
     </style>
@@ -157,9 +231,8 @@ footer {
 
 <body>
 
-    <h5>BTECH YEAR 1 / HTML & CSS / ASSIGNMENT 03</h5>
     <h1>The Ultimate Form</h1>
-    <p>Week 4 · Complete single-column form · Illustrative expected output</p>
+    <p class="subtitle">Week 4 · Complete single-column form · Illustrative expected output</p>
 
     <main>
         <h2>Application Form</h2>
@@ -208,13 +281,12 @@ footer {
 
             </fieldset>
 
-
             <fieldset>
                 <legend>Education</legend>
 
-                <label for="course">Course*</label>
+                <label for="course">Course *</label>
                 <select id="course" name="course" required>
-                    <option >Enter Course</option>
+                    <option value="">Enter Course</option>
                     <option value="BTech">BTech — Computer Science</option>
                     <option value="BCA">BCA</option>
                     <option value="MCA">MCA</option>
@@ -245,7 +317,6 @@ footer {
                 <label for="js" class="inline">JavaScript</label>
 
             </fieldset>
-
 
             <fieldset>
                 <legend>Upload & Extras</legend>
@@ -282,7 +353,6 @@ footer {
             <button type="reset">Reset</button>
 
         </form>
-
     </main>
 
     <footer>
